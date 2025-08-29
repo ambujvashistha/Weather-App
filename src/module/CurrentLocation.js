@@ -1,4 +1,4 @@
-import { ScrollView, ActivityIndicator } from "react-native";
+import { ScrollView, ActivityIndicator, TextInput } from "react-native";
 import React, { useEffect, useState } from "react";
 import CurrentWeatherCard from "../components/current-weather-card/CurrentWeatherCard";
 import { styles } from "./ModuleStyles";
@@ -26,6 +26,7 @@ export default function CurrentLocation() {
   return (
     <ScrollView style={styles.scrollView}>
       <CurrentWeatherCard weatherData={weatherData} />
+      <TextInput onChangeText={() => {}} style={styles.input} />
     </ScrollView>
   );
 }
