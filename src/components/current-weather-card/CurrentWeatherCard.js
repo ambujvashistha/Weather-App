@@ -4,10 +4,13 @@ import { styles } from "./CurrentWeatherCardStyles";
 
 const CurrentWeatherCard = ({ weatherData }) => {
   if (!weatherData || weatherData.cod !== 200) return null;
-
+  const { name, main, weather } = weatherData;
+  const temperatureCelsius = (main.temp - 273.15).toFixed(2);
   return (
     <View style={styles.container}>
-      {/* // TODO: Design card component by using CurrentWeatherCardStyles */}
+      <Text style={styles.title}>{name}</Text>
+      <Text style={styles.subTitle}>{weather[0].main}</Text>
+      <Text style={styles.tempText}>{temperatureCelsius}°C</Text>
     </View>
   );
 };
